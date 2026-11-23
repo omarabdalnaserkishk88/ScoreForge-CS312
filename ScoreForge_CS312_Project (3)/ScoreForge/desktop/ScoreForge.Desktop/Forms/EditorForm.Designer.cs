@@ -1,0 +1,81 @@
+using System.Drawing;
+using System.Windows.Forms;
+namespace ScoreForge.Desktop.Forms;
+partial class EditorForm
+{
+ private System.ComponentModel.IContainer? components;
+ private Label lblHeading = null!;
+ private Panel fieldHost = null!;
+ private Label lblError = null!;
+ private Button btnSave = null!;
+ private Button btnCancel = null!;
+ protected override void Dispose(bool disposing) { if(disposing) components?.Dispose(); base.Dispose(disposing); }
+ private void InitializeComponent()
+ {
+ components = new System.ComponentModel.Container();
+ SuspendLayout();
+ lblHeading = new Label();
+ lblHeading.Name = "lblHeading";
+ lblHeading.Location = new Point(25, 20);
+ lblHeading.Size = new Size(460, 45);
+ lblHeading.Text = "Edit record";
+ lblHeading.ForeColor = Color.FromArgb(237, 240, 246);
+ lblHeading.Font = new Font("Segoe UI", 23F, FontStyle.Regular);
+ lblHeading.ForeColor = Color.FromArgb(184, 239, 118);
+ this.Controls.Add(lblHeading);
+ fieldHost = new Panel();
+ fieldHost.Name = "fieldHost";
+ fieldHost.Location = new Point(25, 85);
+ fieldHost.Size = new Size(470, 380);
+ fieldHost.ForeColor = Color.FromArgb(237, 240, 246);
+ fieldHost.BackColor = Color.FromArgb(25, 30, 39);
+ fieldHost.AutoScroll = true;
+ fieldHost.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+ this.Controls.Add(fieldHost);
+ lblError = new Label();
+ lblError.Name = "lblError";
+ lblError.Location = new Point(25, 475);
+ lblError.Size = new Size(470, 55);
+ lblError.ForeColor = Color.FromArgb(237, 240, 246);
+ lblError.Font = new Font("Segoe UI", 10F, FontStyle.Regular);
+ lblError.ForeColor = Color.FromArgb(255,147,157);
+ this.Controls.Add(lblError);
+ btnSave = new Button();
+ btnSave.Name = "btnSave";
+ btnSave.Location = new Point(350, 540);
+ btnSave.Size = new Size(145, 40);
+ btnSave.Text = "Save";
+ btnSave.ForeColor = Color.FromArgb(237, 240, 246);
+ btnSave.FlatStyle = FlatStyle.Flat;
+ btnSave.FlatAppearance.BorderSize = 0;
+ btnSave.BackColor = Color.FromArgb(34, 41, 54);
+ btnSave.Cursor = Cursors.Hand;
+ btnSave.BackColor = Color.FromArgb(184, 239, 118);
+ btnSave.ForeColor = Color.FromArgb(23, 33, 19);
+ this.Controls.Add(btnSave);
+ btnCancel = new Button();
+ btnCancel.Name = "btnCancel";
+ btnCancel.Location = new Point(185, 540);
+ btnCancel.Size = new Size(145, 40);
+ btnCancel.Text = "Cancel";
+ btnCancel.ForeColor = Color.FromArgb(237, 240, 246);
+ btnCancel.FlatStyle = FlatStyle.Flat;
+ btnCancel.FlatAppearance.BorderSize = 0;
+ btnCancel.BackColor = Color.FromArgb(34, 41, 54);
+ btnCancel.Cursor = Cursors.Hand;
+ this.Controls.Add(btnCancel);
+ btnCancel.DialogResult = DialogResult.Cancel;
+ CancelButton = btnCancel;
+ AcceptButton = btnSave;
+ AutoScaleDimensions = new SizeF(7F,15F);
+ AutoScaleMode = AutoScaleMode.Font;
+ ClientSize = new Size(520,600);
+ MinimumSize = new Size(520,600);
+ BackColor = Color.FromArgb(16, 19, 25);
+ ForeColor = Color.FromArgb(237, 240, 246);
+ Font = new Font("Segoe UI",10F);
+ Text = "ScoreForge · EditorForm";
+ StartPosition = FormStartPosition.CenterScreen;
+ ResumeLayout(false);
+ }
+}
